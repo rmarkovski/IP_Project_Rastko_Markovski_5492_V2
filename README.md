@@ -3,5 +3,5 @@ A Riot Games API has to be generated every 24 hours, I have to provide you a new
 
 To start the project I use:
 ```
-npm run start
+npm start
 ```
