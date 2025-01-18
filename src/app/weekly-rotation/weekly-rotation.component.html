@@ -1,0 +1,35 @@
+<div class="container mt-5">
+  <div class="champion-rotation-header">
+    <h1 class="champion-rotation-title">Weekly Champion Rotation</h1>
+    <p class="champion-rotation-subtitle">Available until next Tuesday</p>
+    <button class="riot-button favorite-btn" (click)="onFavoriteClick()">My Favorite Champion</button>
+    
+    <div *ngIf="favoriteChampionMastery" class="mastery-info">
+      <img [src]="favoriteChampionMastery.championImage" [alt]="favoriteChampionMastery.championName" class="mastery-champion-image">
+      <h3>{{ favoriteChampionMastery.championName }} Mastery</h3>
+      <p>Champion Level: {{ favoriteChampionMastery.championLevel }}</p>
+      <p>Mastery Points: {{ favoriteChampionMastery.championPoints }}</p>
+      <p>Chest Granted: {{ favoriteChampionMastery.chestGranted ? 'Yes' : 'No' }}</p>
+      <p>Last Play Time: {{ favoriteChampionMastery.lastPlayTime | date }}</p>
+    </div>
+  </div>
+  
+  <div class="rotation-content">
+    <p *ngIf="errorMessage" class="text-danger">{{ errorMessage }}</p>
+    <div *ngIf="champions.length > 0; else loading">
+      <div class="champions-grid">
+        <div class="champion-item" *ngFor="let champion of champions">
+          <div class="card">
+            <img [src]="champion.image" class="card-img-top" [alt]="champion.name" onerror="this.onerror=null;this.src='https://via.placeholder.com/150';">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{ champion.name }}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ng-template #loading>
+      <p class="text-center">Loading champion rotation...</p>
+    </ng-template>
+  </div>
+</div>

@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --riot-gold: #C89B3C;
+  --riot-gold-light: #F0E6D2;
+  --riot-blue: #0A1428;
+  --riot-blue-light: #1E2328;
+  --riot-gray: #A09B8C;
+  --riot-white: #FFFFFF;
+}
+
+body {
+    background-image: url('assets/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--riot-white);
+    background-color: var(--riot-blue);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 9, 19, 0.8) 0%,
+        rgba(0, 9, 19, 0.7) 100%
+    );
+    z-index: -1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+    color: var(--riot-gold-light);
+    letter-spacing: 0.05em;
+}
+
+.riot-button {
+    background: transparent;
+    border: 2px solid var(--riot-gold);
+    color: var(--riot-gold);
+    padding: 12px 32px;
+    font-family: 'Marcellus', serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.riot-button:hover {
+    background-color: var(--riot-gold);
+    color: var(--riot-blue);
+}
+
+nav {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+    padding: 20px 0;
+}
+
+a {
+    color: var(--riot-gold);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--riot-gold-light);
+}
+
+.content-card {
+    background: rgba(10, 20, 40, 0.8);
+    border: 1px solid var(--riot-gold);
+    padding: 20px;
+    margin: 10px;
+}
+
+.section-header {
+    position: relative;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.section-header::before,
+.section-header::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 2px;
+    background: var(--riot-gold);
+}
+
+.section-header::before {
+    right: calc(50% + 100px);
+}
+
+.section-header::after {
+    left: calc(50% + 100px);
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--riot-blue);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--riot-gold);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--riot-gold-light);
+}
+
+.champion-rotation-header {
+    text-align: center;
+    padding-top: 40px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.champion-rotation-title {
+    font-family: 'Marcellus', serif;
+    font-size: 2.5rem;
+    color: var(--riot-gold);
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
+    display: inline-block;
+}
+
+.champion-rotation-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--riot-gold),
+        transparent
+    );
+}
+
+.champion-rotation-subtitle {
+    color: var(--riot-gray);
+    font-size: 1rem;
+    margin-top: 15px;
+    font-weight: 400;
+}
+
+.rotation-content {
+    margin-top: 20px;
+    position: relative;
+    z-index: 0;
+}
+
+.champion-col {
+    flex: 0 0 20%;
+    max-width: 20%;
+    padding: 0 4px;
+    margin-bottom: 8px;
+}
+
+@media (max-width: 992px) {
+    .champion-col {
+        flex: 0 0 33.333%;
+        max-width: 33.333%;
+    }
+}
+
+@media (max-width: 768px) {
+    .champion-col {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .champion-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.card {
+    max-width: 150px;
+    margin: 0 auto;
+    background: rgba(10, 20, 40, 0.8);
+    border: 1px solid var(--riot-gold);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 0.75rem;
+}
+
+.card-title {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+}
+
+.rotation-content .container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.row {
+    margin-left: -4px;
+    margin-right: -4px;
+}
+
+.container {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.champions-grid {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 6px;
+}
+
+.champion-item {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    width: 130px;
+    background: rgba(10, 20, 40, 0.8);
+    border: 1px solid var(--riot-gold);
+    margin: 0;
+}
+
+.card-body {
+    padding: 0.5rem;
+}
+
+.card-title {
+    font-size: 0.85rem;
+    margin: 0;
+    color: var(--riot-gold-light);
+}
+
+@media (max-width: 992px) {
+    .champions-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .champions-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .champions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.favorite-btn {
+    margin-top: 20px;
+    margin-bottom: 0;
+    background: rgba(10, 20, 40, 0.8);
+    transition: all 0.3s ease;
+}
+
+.favorite-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--riot-gold);
+}
+
+.mastery-info {
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(10, 20, 40, 0.9);
+    border: 1px solid var(--riot-gold);
+    border-radius: 4px;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.mastery-info h3 {
+    color: var(--riot-gold);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.mastery-info p {
+    color: var(--riot-white);
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+.mastery-champion-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    border: 2px solid var(--riot-gold);
+    margin-bottom: 15px;
+    background-color: var(--riot-blue-light);
+}

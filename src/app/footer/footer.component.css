@@ -1,0 +1,17 @@
+.footer {
+  background-color: rgba(10, 20, 40, 0.9);
+  color: var(--riot-gold);
+  padding: 20px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  border-top: 1px solid var(--riot-gold);
+  box-shadow: 0 -2px 10px rgba(200, 155, 60, 0.1);
+}
+
+.footer p {
+  margin: 0;
+  font-size: 1.1rem;
+}
