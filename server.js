@@ -4,11 +4,13 @@ const axios = require('axios');
 
 const app = express();
 const port = 3000;
+const path = require('path');
+const fs = require('fs');
 
 app.use(cors());
 
 // Treba da se menuva API_KEY na sekoi 24h
-const API_KEY = 'RGAPI-c357039a-0d95-4b7a-889d-b44cbf623545';
+const API_KEY = 'RGAPI-f562458e-2e41-40e4-ab11-d2937adb103a';
 
 app.get('/api/champion-rotations', async (req, res) => {
   try {
@@ -37,6 +39,26 @@ app.get('/api/champion-mastery/98', async (req, res) => {
     });
   }
 }); 
+
+app.get('/api/champions/shen', (req, res) => {
+  const filePath = path.join(__dirname,'shen.json');
+
+  fs.readFile(filePath, 'utf8', (err, data) => {
+      if (err) {
+          console.error('Error reading file from disk:', err);
+          return res.status(500).send('Unable to load champion data');
+      }
+      try {
+          const jsonData = JSON.parse(data);
+          res.setHeader('Content-Type', 'application/json');
+          res.json(jsonData);
+      } catch (err) {
+          console.error('Error parsing JSON:', err);
+          res.status(500).send('Error parsing champion data');
+      }
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`Proxy server is running on http://localhost:${port}`);

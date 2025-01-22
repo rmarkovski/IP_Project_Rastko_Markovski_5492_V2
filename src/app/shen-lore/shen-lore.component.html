@@ -1,19 +1,15 @@
-<div class="shen-lore">
-  <div class="shen-image"></div>
+<div class="shen-lore" *ngIf="shenData">
+  <div class="shen-image" [ngStyle]="{'background-image': 'url(' + shenData.icon + ')'}"></div>
   <div class="content">
-    <h2 class="subtitle">The Eye of Twilight</h2>
-    <h1 class="title">Shen</h1>
+    <h2 class="subtitle">{{ shenData.title }}</h2>
+    <h1 class="title">{{ shenData.name }}</h1>
     <p class="description">
-      Among the secretive, Ionian warriors known as the Kinkou, Shen serves as their leader,
-      the Eye of Twilight. He longs to remain free from the confusion of emotion, prejudice, and
-      ego, and walks the unseen path of dispassionate judgment between the spirit realm and
-      the physical world. Tasked with enforcing the equilibrium between them, Shen wields
-      blades of steel and arcane energy against any who would threaten it.
+      {{ shenData.lore }}
     </p>
     <div class="info-cards">
-      <div class="info-card">
+      <div class="info-card" *ngFor="let tag of shenData.tags">
         <p class="info-title">Role</p>
-        <p class="info-value">Tank</p>
+        <p class="info-value">{{ tag }}</p>
       </div>
       <div class="info-card">
         <p class="info-title">Difficulty</p>
@@ -22,4 +18,3 @@
     </div>
   </div>
 </div>
-  

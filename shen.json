@@ -1,0 +1,14 @@
+{
+    "id": "shen",
+    "key": "98",
+    "name": "Shen",
+    "title": "the Eye of Twilight",
+    "tags": ["Tank"],
+    "lore": "Among the secretive, Ionian warriors known as the Kinkou, Shen serves as their leader, the Eye of Twilight. He longs to remain free from the confusion of emotion, prejudice, and ego, and walks the unseen path of dispassionate judgment between the spiritual and the mundane world.",
+    "icon": "../assets/images/shen-background.jpg'",
+    "sprite": {
+        "url": "http://ddragon.leagueoflegends.com/cdn/10.23.1/img/sprite/champion3.png",
+        "x": 288,
+        "y": 48
+    }
+}
